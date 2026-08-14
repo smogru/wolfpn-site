@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://smogru.github.io/wolfpn-site
+Sitemap: https://smogru.github.io/wolfpn-site/sitemap.xml
