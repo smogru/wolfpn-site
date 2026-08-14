@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const BOT_URL = "https://t.me/WolfPN_bot?start=ref_REF-3CF3E36D";
 const REGISTRATION_URL = "https://wolfpn-v2.com/cabinet/register?ref=REF-3CF3E36D";
@@ -149,11 +151,11 @@ function LogoMark() {
 function BrandArtwork({ decorative = false }: { decorative?: boolean }) {
   return (
     <span className="brand-artwork" aria-hidden={decorative || undefined}>
-      <img
+      <Image
         src="/media/wolf-brand.webp"
         alt={decorative ? "" : "WOLF Private Network"}
-        width="640"
-        height="640"
+        width={640}
+        height={640}
         decoding="async"
       />
     </span>
@@ -704,6 +706,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="seo-directory" aria-labelledby="seo-directory-title">
+        <div className="shell">
+          <p className="section-kicker">Полезные страницы</p>
+          <h2 id="seo-directory-title">Всё о WolfPN и подключении</h2>
+          <div className="seo-directory-grid">
+            <div><h3>Выбрать VPN</h3><Link href="/vpn-s-probnym-periodom">VPN с пробным периодом</Link><Link href="/vpn-bez-registratsii">VPN без отдельного аккаунта</Link><Link href="/tarify">Тарифы WolfPN</Link><Link href="/unblock-vpn">Unblock VPN</Link><Link href="/sravnenie-vpn">Как сравнивать VPN</Link></div>
+            <div><h3>Устройства</h3><Link href="/vpn-dlya-android">VPN для Android</Link><Link href="/vpn-dlya-iphone">VPN для iPhone</Link><Link href="/vpn-dlya-windows">VPN для Windows</Link><Link href="/vpn-dlya-macos">VPN для macOS</Link><Link href="/vpn-na-4-ustroystva">VPN на 4 устройства</Link></div>
+            <div><h3>Сценарии</h3><Link href="/vpn-dlya-igr">VPN для игр</Link><Link href="/vpn-dlya-video">VPN для видео</Link><Link href="/vpn-dlya-public-wifi">VPN для публичного Wi‑Fi</Link><Link href="/vpn-dlya-puteshestviy">VPN для путешествий</Link><Link href="/vpn-snizhaet-skorost">Как ускорить VPN</Link></div>
+            <div><h3>База знаний</h3><Link href="/chto-takoe-vpn">Что такое VPN</Link><Link href="/kak-rabotaet-vpn">Как работает VPN</Link><Link href="/kak-vybrat-vpn">Как выбрать VPN</Link><Link href="/kak-ustanovit-vpn">Как установить VPN</Link><Link href="/chto-takoe-no-logs">Что такое No Logs</Link></div>
+          </div>
+        </div>
+      </section>
+
       <footer className="site-footer">
         <div className="shell footer-grid">
           <div className="footer-brand">
@@ -711,9 +726,9 @@ export default function Home() {
             <p>Безопасный интернет<br />без лишних границ</p>
             <span>© 2026 WolfPN</span>
           </div>
-          <div><h3>Продукт</h3><a href="#prices">Тарифные планы</a><a href="#advantages">Преимущества</a><a href="#setup">Как подключиться</a><a href="#privacy">О приватности</a></div>
-          <div><h3>Устройства</h3><span>iOS и iPadOS</span><span>Android</span><span>Windows</span><span>macOS</span></div>
-          <div><h3>Поддержка</h3><a href="#faq">FAQ</a><a href={SUPPORT_URL} target="_blank" rel="noreferrer">Telegram: @WolfPNsupport_bot</a><a href={SUPPORT_URL} target="_blank" rel="noreferrer">Помощь 24/7</a></div>
+          <div><h3>Продукт</h3><Link href="/tarify">Тарифные планы</Link><Link href="/vpn-s-probnym-periodom">Пробный доступ</Link><Link href="/unblock-vpn">Unblock VPN</Link><Link href="/sravnenie-vpn">Сравнение VPN</Link></div>
+          <div><h3>Устройства</h3><Link href="/vpn-dlya-iphone">iOS и iPadOS</Link><Link href="/vpn-dlya-android">Android</Link><Link href="/vpn-dlya-windows">Windows</Link><Link href="/vpn-dlya-macos">macOS</Link></div>
+          <div><h3>Поддержка</h3><Link href="/faq">FAQ</Link><a href={SUPPORT_URL} target="_blank" rel="noreferrer">Telegram: @WolfPNsupport_bot</a><Link href="/privacy-policy">Конфиденциальность</Link><Link href="/affiliate-disclosure">Партнёрское раскрытие</Link></div>
         </div>
       </footer>
 
